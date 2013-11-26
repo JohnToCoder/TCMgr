@@ -12,7 +12,10 @@ namespace TCMgr
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!Page.IsValid) 
+            {
+                return;
+            }
         }
         protected void Login_Btn(object sender, EventArgs e)
         {
@@ -28,6 +31,10 @@ namespace TCMgr
                     this.ClientScript.RegisterStartupScript(this.GetType(), "checkcode", "<script>alert('验证码错误!');</script>");
                 }
                 return;
+            }
+            else 
+            {
+                Response.Redirect("./index.aspx");
             }
         }
     }

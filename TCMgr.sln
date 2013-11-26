@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCMgr", "TCMgr\TCMgr.csproj", "{18EF0635-5FE7-4BDD-A689-F610DAC3159C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCMgrWeb", "TCMgr\TCMgrWeb.csproj", "{18EF0635-5FE7-4BDD-A689-F610DAC3159C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
