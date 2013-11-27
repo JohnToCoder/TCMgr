@@ -495,7 +495,9 @@
     <Content Include="themes\metro\tree.css" />
     <Content Include="themes\metro\validatebox.css" />
     <Content Include="themes\metro\window.css" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

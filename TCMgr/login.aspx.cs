@@ -5,14 +5,18 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace TCMgr
 {
     public partial class login : System.Web.UI.Page
     {
+        private string strDataConn = ConfigurationManager.ConnectionStrings["SQLDataConnStr"].ConnectionString;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsValid) 
+            if (!Page.IsPostBack) 
             {
                 return;
             }
@@ -23,6 +27,18 @@ namespace TCMgr
             string password = this.txtPassWord.Value.ToLower().ToString();
             string chkcode = this.txtCode.Value.ToLower().ToString();
 
+           // string strDataConn = ConfigurationManager.ConnectionStrings["SQLDataConnStr"].ConnectionString;
+            SqlConnection dataConn = new SqlConnection(strDataConn);
+            string str = "select * from tabUser";
+            SqlCommand command = new SqlCommand(str, dataConn);
+            dataConn.Open();
+            SqlDataReader dr = command.ExecuteReader();
+            while (dr.Read()) {
+                 username = dr["UserName"].ToString();
+                
+            }
+            dr.Close();
+            dataConn.Close();
             if (chkcode != this.Request.Cookies["checkcode"].Value.ToLower())
             {
                 //写脚本提示
