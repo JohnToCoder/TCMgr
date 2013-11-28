@@ -39,6 +39,9 @@
                         <table class="cc06"  border=0 cellpadding=0 cellspacing=0>
                             <tbody>
                                 <tr>
+                                    <td  height=30 colspan=3><label id="labErrorPN" runat=server visible=false style=" color:Red; font-style:oblique; font-size:medium;"> 输入的用户名或者密码错误！</label></td>
+                                </tr>
+                                <tr>
                                     <td height=30 width=53>用户名：</td>
                                     <td valign="middle" >
                                         <input runat=server name="txtUserName" value='' style="color:#ff0000; font-weight:bold; padding-left:5px; width:125px; height:25px; vertical-align:middle;" type="text" id=txtUserName dataType="Require" msg="用户名不能为空" maxLength=16 />
