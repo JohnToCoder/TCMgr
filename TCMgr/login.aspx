@@ -53,7 +53,7 @@
                                 <tr>
                                     <td height=30 width=53>密    码：</td>
                                     <td  >
-                                        <input runat=server name="txtPassWord" value='' style="color:#ff0000; font-weight:bold; padding-left:5px; width:125px; height:25px; vertical-align:middle;" type="text" id=txtPassWord dataType="Require" msg="密码不能为空" maxLength=16 />
+                                        <input runat=server name="txtPassWord" value='' style="color:#ff0000; font-weight:bold; padding-left:5px; width:125px; height:25px; vertical-align:middle;" type=password id=txtPassWord dataType="Require" msg="密码不能为空" maxLength=16 />
                                     </td>
                                     <td >   
                                         <img alt='' src="images/luck.gif" width=19 height=18 />

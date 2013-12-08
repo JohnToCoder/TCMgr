@@ -21,12 +21,21 @@ namespace TCMgr
         }
         protected void Login_Btn(object sender, EventArgs e)
         {
-            string txtUserName = this.txtUserName.Value.ToLower().ToString();
+            string txtUserName = this.txtUserName.Value.ToString();
             string dataUserName ="";
-            string txtPassWord = this.txtPassWord.Value.ToLower().ToString();
+            string txtPassWord = this.txtPassWord.Value.ToString();
             string dataPassWord ="";
             string chkcode = this.txtCode.Value.ToLower().ToString();
-            string strSQL = "select * from tabUser where UserName = '"+ txtUserName+"'";
+
+            string dataID = "";
+            string dataUserID = "";
+            string dtaUserType = "";
+            string dataEmail = "";
+            string dataTel = "";
+
+
+            string strSQL = "select UserID,UserName,PassWord,UserType,TypeName,Email,Tel  from tabUser "+
+                "left join dbo.tabUserType  on UserType = TypeID "+" where UserName = '"+ txtUserName+"'";
             string strDataConn = ConfigurationManager.ConnectionStrings["SQLDataConnStr"].ConnectionString;
             SqlConnection dataConn = new SqlConnection(strDataConn);
             SqlCommand command = new SqlCommand(strSQL, dataConn);
@@ -43,7 +52,7 @@ namespace TCMgr
             }
             else 
             {
-
+                Response.Redirect("./index.aspx");
                 try
                 {
                     dataConn.Open();
@@ -53,23 +62,23 @@ namespace TCMgr
                         dataUserName = dr["UserName"].ToString();
                         dataPassWord = dr["PassWord"].ToString();
                     }
-                    if (dataUserName.ToLower() == txtUserName && dataPassWord.ToLower() == txtPassWord)
-                    {
-                        Response.Redirect("./index.aspx");
-                    }
-                    else 
-                    {
-                        this.labErrorPN.Visible = true;
-                    }
                     dr.Close();
                 }
-                catch 
+                catch
                 {
                     Response.Redirect("./login.aspx");
                 }
-                finally
-                {                    
-                    dataConn.Close();
+                finally 
+                { 
+                    dataConn.Close(); 
+                }
+                if (dataUserName == txtUserName && dataPassWord == txtPassWord)
+                {
+                    Response.Redirect("./index.aspx");
+                }
+                else
+                {
+                    this.labErrorPN.Visible = true;
                 }
                
             }
