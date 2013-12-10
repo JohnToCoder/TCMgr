@@ -20,7 +20,7 @@
         <div data-options="region:'north'" style="height:100px;" >
             <p>标题层，制作标题背景图和标题内容</p>
             <div style="float:right">
-                <asp:Label ID="Username" runat="server" Text="">  <h3 style="color:Red">欢迎您！</h3></asp:Label>               
+                <asp:Label ID="UserName" runat="server" style="color:Red; font-size:x-large; font-style:normal" Text=""> </asp:Label>               
             </div>
         </div>
         <div data-options="region:'south'" style="height:50px;"></div>
@@ -56,8 +56,7 @@
                     </table>
                 </div>
             </div>
-        </div>
-  
+        </div>  
        
     </div>
     

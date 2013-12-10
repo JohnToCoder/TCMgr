@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using TCMgr.Class;
 
 namespace TCMgr
 {
@@ -21,19 +22,11 @@ namespace TCMgr
         }
         protected void Login_Btn(object sender, EventArgs e)
         {
-            string txtUserName = this.txtUserName.Value.ToString();
-            string dataUserName ="";
-            string txtPassWord = this.txtPassWord.Value.ToString();
-            string dataPassWord ="";
+            string txtUserName = this.txtUserName.Value.ToString();            
+            string txtPassWord = this.txtPassWord.Value.ToString();            
             string chkcode = this.txtCode.Value.ToLower().ToString();
-
-            string dataID = "";
-            string dataUserID = "";
-            string dtaUserType = "";
-            string dataEmail = "";
-            string dataTel = "";
-
-
+            User userInfo = new User(); //创建用户信息类，保存用户信息
+            
             string strSQL = "select UserID,UserName,PassWord,UserType,TypeName,Email,Tel  from tabUser "+
                 "left join dbo.tabUserType  on UserType = TypeID "+" where UserName = '"+ txtUserName+"'";
             string strDataConn = ConfigurationManager.ConnectionStrings["SQLDataConnStr"].ConnectionString;
@@ -52,15 +45,19 @@ namespace TCMgr
             }
             else 
             {
-                Response.Redirect("./index.aspx");
+               
                 try
                 {
                     dataConn.Open();
                     SqlDataReader dr = command.ExecuteReader();
                     while (dr.Read())
                     {
-                        dataUserName = dr["UserName"].ToString();
-                        dataPassWord = dr["PassWord"].ToString();
+                        userInfo.uID = dr["UserID"].ToString();
+                        userInfo.uName = dr["UserName"].ToString();
+                        userInfo.uPW = dr["PassWord"].ToString();
+                        userInfo.uType = dr["TypeName"].ToString();
+                        userInfo.uEmail = dr["Email"].ToString();
+                        userInfo.uTel = dr["Tel"].ToString();
                     }
                     dr.Close();
                 }
@@ -72,8 +69,15 @@ namespace TCMgr
                 { 
                     dataConn.Close(); 
                 }
-                if (dataUserName == txtUserName && dataPassWord == txtPassWord)
+                if (userInfo.uName == txtUserName && userInfo.uPW == txtPassWord)
                 {
+                    /*保存用户Session信息*/
+                    Session.Add("UserID", userInfo.uID);
+                    Session.Add("UserName", userInfo.uName);
+                    Session.Add("TypeName", userInfo.uType);
+                    Session.Add("Email", userInfo.uEmail);
+                    Session.Add("Tel", userInfo.uTel);
+
                     Response.Redirect("./index.aspx");
                 }
                 else

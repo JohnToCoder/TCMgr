@@ -11,6 +11,9 @@ namespace TCMgr
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Page.IsPostBack) {
+                UserName.Text = Session["UserName"].ToString()+" 欢迎您！";
+            }
             
         }
     }
