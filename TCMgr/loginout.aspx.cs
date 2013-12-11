@@ -7,16 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace TCMgr
 {
-    public partial class index : System.Web.UI.Page
+    public partial class loginout : System.Web.UI.Page
     {
-        public string strUserName = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-            if (!Page.IsPostBack) {
-               strUserName = Session["UserName"].ToString()+" 欢迎您！";
-            }
-            
+            Response.Redirect("./login.aspx");
         }
     }
 }

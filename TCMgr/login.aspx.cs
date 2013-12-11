@@ -26,14 +26,14 @@ namespace TCMgr
             string txtPassWord = this.txtPassWord.Value.ToString();            
             string chkcode = this.txtCode.Value.ToLower().ToString();
             User userInfo = new User(); //创建用户信息类，保存用户信息
-            
+            /*查询数据库提取用户信息*/
             string strSQL = "select UserID,UserName,PassWord,UserType,TypeName,Email,Tel  from tabUser "+
                 "left join dbo.tabUserType  on UserType = TypeID "+" where UserName = '"+ txtUserName+"'";
             string strDataConn = ConfigurationManager.ConnectionStrings["SQLDataConnStr"].ConnectionString;
             SqlConnection dataConn = new SqlConnection(strDataConn);
             SqlCommand command = new SqlCommand(strSQL, dataConn);
             
-            
+            /*验证登陆信息：验证码、用户名、用户密码；Session保存用户信息*/
             if (chkcode != this.Request.Cookies["checkcode"].Value.ToLower())
             {
                 //写脚本提示
@@ -55,6 +55,7 @@ namespace TCMgr
                         userInfo.uID = dr["UserID"].ToString();
                         userInfo.uName = dr["UserName"].ToString();
                         userInfo.uPW = dr["PassWord"].ToString();
+                        userInfo.uTypeID = dr["UserType"].ToString();
                         userInfo.uType = dr["TypeName"].ToString();
                         userInfo.uEmail = dr["Email"].ToString();
                         userInfo.uTel = dr["Tel"].ToString();
@@ -63,10 +64,12 @@ namespace TCMgr
                 }
                 catch
                 {
+                    //数据库连接异常返回登陆页面
                     Response.Redirect("./login.aspx");
                 }
                 finally 
                 { 
+                    //最终都要关闭数据库连接
                     dataConn.Close(); 
                 }
                 if (userInfo.uName == txtUserName && userInfo.uPW == txtPassWord)
@@ -74,6 +77,7 @@ namespace TCMgr
                     /*保存用户Session信息*/
                     Session.Add("UserID", userInfo.uID);
                     Session.Add("UserName", userInfo.uName);
+                    Session.Add("TypeID", userInfo.uTypeID);
                     Session.Add("TypeName", userInfo.uType);
                     Session.Add("Email", userInfo.uEmail);
                     Session.Add("Tel", userInfo.uTel);

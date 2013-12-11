@@ -12,6 +12,7 @@
     <link href="images/style_login.css" rel="stylesheet" type="text/css" />
     <script src="JS/validator.js" type="text/javascript"></script>
     <script src="JS/login.js" type="text/javascript"></script>
+    <script src="JS/MD5.js" type="text/javascript"></script>
     <script type="text/javascript">
         function getPX()
         {
@@ -69,11 +70,17 @@
                                     </td>   
                                 </tr>                             
                                 <tr>
-                                    <td height=60></td>
+                                    <td height=30></td>
                                     <td >
                                         <asp:Button runat=server class="button" ID="btnLogin" Text="登录" OnClick="Login_Btn" OnClientClick="return Validator.Validate(this.form,1);" />
                                     <td ><input id="chkRemeber" type=checkbox name="chkRemember" style="margin-left:8px; vertical-align:middle;"/><label for="chkRemember" style="vertical-align:middle;">记住本次登录</label>
                                     </td>                                                                
+                                </tr>
+                                <tr>
+                                    <td ></td>
+                                    <td colspan=2> 
+                                        <a id="linkSign" onclick=""></a>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>

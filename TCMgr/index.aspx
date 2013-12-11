@@ -6,7 +6,8 @@
 <head runat="server">
     <title>首页</title>
     <link href="themes/default/easyui.css" rel="stylesheet" type="text/css" />
-    <link href="themes/icon.css" rel="stylesheet" type="text/css" />
+    <link href="themes/icon.css" rel="stylesheet" type="text/css" />    
+    <link href="Styles/Style_d.css" rel="stylesheet" type="text/css" />
     <script src="Scripts/jquery-1.10.2.min.js" type="text/javascript"></script>
     <script src="Scripts/jquery.min.js" type="text/javascript"></script>
     <script src="Scripts/jquery-ui.js" type="text/javascript"></script>
@@ -14,52 +15,51 @@
     <script src="JS/index.js" type="text/javascript"></script>
 </head>
 <body>
+    <noscript>
+        <div style=" position:absolute; z-index:100000; height:2046px;top:0px;left:0px; width:100%; background:white; text-align:center;">
+            <img src="images/noscript.gif" alt='抱歉，请开启脚本支持！' />
+        </div>
+    </noscript>       
+    <div id="loading-mask" style="position:absolute;top:0px; left:0px; width:100%; height:100%; background:#D2E0F2; z-index:20000">
+        <div id="pageloading" style="position:absolute; top:50%; left:50%; margin:-120px 0px 0px -120px; text-align:center;  border:2px solid #8DB2E3; width:200px; height:40px;  font-size:14px;padding:10px; font-weight:bold; background:#fff; color:#15428B;"> 
+            <img src="images/loading.gif" align="absmiddle" /> 网络加载中,请稍候...
+            </div>
+    </div>
     <form id="form1" runat="server">
     
-    <div id="cc">
-        <div data-options="region:'north'" style="height:100px;" >
-            <p>标题层，制作标题背景图和标题内容</p>
-            <div style="float:right">
-                <asp:Label ID="UserName" runat="server" style="color:Red; font-size:x-large; font-style:normal" Text=""> </asp:Label>               
-            </div>
+    <div id="cc">       
+
+        <div region="north" split="true" border="false" style="vertical-align:middle;overflow: hidden; height: 30px;
+            background: url(images/layout-browser-hd-bg.gif) #7f99be repeat-x center 50%;
+            line-height: 20px;color: #fff; font-family: Verdana, 微软雅黑,黑体"> 
+            <span id="interface_bt1"><a href='loginout.aspx'><img alt="" src="images/logout.gif" onclick="return confirm('确认：您确认要安全注销，退出登录吗？')" border="0" title="安全注销，退出登陆" align="absmiddle"  /></a></span>             
+            <span id="interface_bt2"><a onclick="addTab('个人资料','/manage/Common/User_InfoEdit.aspx','icon-user2')" href='#'><img src="images/menubox_memberico.gif" border="0"  title="个人设置" align="absmiddle"  /></a></span>
+            <span style="padding-left:10px; font-size: 15px; font-weight:bold; "><img alt="" src="images/user_logo.png" width="20" height="20" align="absmiddle" /> &nbsp;&nbsp;   <%=strUserName %> </span>
         </div>
         <div data-options="region:'south'" style="height:50px;"></div>
-        <div data-options="region:'west',split:true" title="West" style="width:150px;">
-            <div class="easyui-accordion" data-options="fit:true,border:false">
-                <div title="Title1" style="padding:10px;">
-                    content1
-                </div>
-                <div title="Title2" data-options="selected:true" style="padding:10px;">
-                    content2
-                </div>
-                <div title="Title3" style="padding:10px">
-                    content3
-                </div>
+        <div data-options="region:'west',split:true" title="导航菜单" style="width:150px;">
+            <div id="leftMenu">
+            <!--  左边栏导航内容 -->   
             </div>
         </div>
-        <div data-options="region:'center',title:'Main Title',iconCls:'icon-ok'">
-            <div class="easyui-tabs" data-options="fit:true,border:false,plain:true">
-                <div title="About" data-options="href:'_content.html'" style="padding:10px"></div>
-                <div title="DataGrid" style="padding:5px">
-                    <table class="easyui-datagrid"
-                            data-options="url:'datagrid_data1.json',method:'get',singleSelect:true,fit:true,fitColumns:true">
-                        <thead>
-                            <tr>
-                                <th data-options="field:'itemid'" width="80">Item ID</th>
-                                <th data-options="field:'productid'" width="100">Product ID</th>
-                                <th data-options="field:'listprice',align:'right'" width="80">List Price</th>
-                                <th data-options="field:'unitcost',align:'right'" width="80">Unit Cost</th>
-                                <th data-options="field:'attr1'" width="150">Attribute</th>
-                                <th data-options="field:'status',align:'center'" width="50">Status</th>
-                            </tr>
-                        </thead>
-                    </table>
-                </div>
-            </div>
-        </div>  
-       
-    </div>
-    
+        <div id="mainPanle" region="center" style="background: #eee; overflow-y:hidden">
+            <div id="tabs" class="easyui-tabs"  fit="true" border="false" >
+             <!--<div title='隐藏层(勿删)'></div>-->
+		    </div>
+         </div> 
+         <div id="mm" class="easyui-menu" style="width:150px;">
+		    <div id="mm-tabupdate">刷新选项卡</div>
+		    <div class="menu-sep"></div>
+		    <div id="mm-tabclose">关闭</div>
+		    <div id="mm-tabcloseall">全部关闭</div>
+		    <div id="mm-tabcloseother">除此之外全部关闭</div>
+		    <div class="menu-sep"></div>
+		    <div id="mm-tabcloseright">当前页右侧全部关闭</div>
+		    <div id="mm-tabcloseleft">当前页左侧全部关闭</div>
+		    <div class="menu-sep"></div>
+		    <div id="mm-exit">退出</div>
+	    </div>      
+    </div>    
     </form>
 </body>
 </html>
