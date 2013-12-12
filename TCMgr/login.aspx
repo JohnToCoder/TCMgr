@@ -79,7 +79,7 @@
                                 <tr>
                                     <td ></td>
                                     <td colspan=2> 
-                                        <a id="linkSign" onclick=""></a>
+                                        <a id="linkSign" href="#" onclick="">如果没有账号，点击这里注册</a>
                                     </td>
                                 </tr>
                             </tbody>
