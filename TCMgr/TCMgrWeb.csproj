@@ -33,6 +33,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="ObjCon, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ObjCon.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
@@ -512,6 +516,9 @@
     <Compile Include="About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ashx\LoginHandler.ashx.cs">
+      <DependentUpon>LoginHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="CheckCode.ashx.cs">
       <DependentUpon>CheckCode.ashx</DependentUpon>
     </Compile>
@@ -558,6 +565,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CheckCode.ashx" />
+    <Content Include="ashx\LoginHandler.ashx" />
     <None Include="themes\black\images\Thumbs.db" />
     <None Include="themes\bootstrap\images\Thumbs.db" />
     <None Include="themes\default\images\Thumbs.db" />

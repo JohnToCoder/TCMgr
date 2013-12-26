@@ -1,7 +1,9 @@
 ﻿$(function () {
     $('#cc').layout();
     setHeight();
-
+    $(window).resize(function () {
+        windowResize();  //窗口改变大小时加载  
+    });
 
     InitLeftMenu();
 
@@ -14,6 +16,15 @@
     tabCloseEven();
 
 });
+
+function windowResize() {
+    var width = $(window).width() - 10;     
+    var height = $(window).height() - 10;
+    
+    $('#cc').width(width);
+    $('#cc').height(height);
+    $('#cc').layout(); 
+}  
 
 window.onload = function () {
     $('#loading-mask').fadeOut();
