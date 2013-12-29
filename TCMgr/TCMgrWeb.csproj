@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="DeskTop.aspx" />
     <Content Include="images\031.gif" />
     <Content Include="images\a.gif" />
     <Content Include="images\arrow.gif" />
@@ -234,12 +235,15 @@
     <Content Include="images\yx.gif" />
     <Content Include="images\zanwu.gif" />
     <Content Include="index.aspx" />
+    <Content Include="JS\common.js" />
     <Content Include="JS\index.js" />
     <Content Include="JS\login.js" />
     <Content Include="JS\MD5.js" />
     <Content Include="JS\validator.js" />
+    <Content Include="JS\zDialog.js" />
     <Content Include="login.aspx" />
     <Content Include="loginout.aspx" />
+    <Content Include="Manage\User_Info.aspx" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery-ui.js" />
     <Content Include="Scripts\jquery.easyui.min.js" />
@@ -530,6 +534,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DeskTop.aspx.cs">
+      <DependentUpon>DeskTop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeskTop.aspx.designer.cs">
+      <DependentUpon>DeskTop.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -553,6 +564,13 @@
     </Compile>
     <Compile Include="loginout.aspx.designer.cs">
       <DependentUpon>loginout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\User_Info.aspx.cs">
+      <DependentUpon>User_Info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\User_Info.aspx.designer.cs">
+      <DependentUpon>User_Info.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
