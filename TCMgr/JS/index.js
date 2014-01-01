@@ -4,7 +4,7 @@
     $(window).resize(function () {
         windowResize();  //窗口改变大小时加载  
     });
-   
+
     $('#tabs').tabs('add', {
         title: '我的工作台',
         iconCls: 'icon icon-home',
@@ -12,6 +12,22 @@
     });
     tabClose();
     tabCloseEven();
+
+    $('.leftMenulist li a').click(function () {
+        var tabTitle = $(this).children('.nav').text();
+
+        var url = $(this).attr("rel");
+        var icon = $(this).find('.icon').attr('class');
+
+        addTab(tabTitle, url, icon);
+        $('.navlist li div').removeClass("selected");
+        $(this).parent().addClass("selected");
+
+    }).hover(function () {
+        $(this).parent().addClass("hover");
+    }, function () {
+        $(this).parent().removeClass("hover");
+    });
 
 });
 
@@ -31,7 +47,7 @@ function setHeight() {
     var cheight = document.documentElement.clientHeight;
     var cwidth = document.documentElement.clientWidth;
     var c = $('#cc');
-    c.height(cheight-20);
+    c.height(cheight-10);
     c.width(cwidth-10);
     c.layout('resize');
 }

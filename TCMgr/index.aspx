@@ -8,6 +8,7 @@
     <link href="themes/default/easyui.css" rel="stylesheet" type="text/css" />
     <link href="themes/icon.css" rel="stylesheet" type="text/css" />    
     <link href="Styles/Style_d.css" rel="stylesheet" type="text/css" />
+    <link href="JS/themes/icon.css" rel="stylesheet" type="text/css" />
     <script src="Scripts/jquery-1.10.2.min.js" type="text/javascript"></script>
     <script src="Scripts/jquery.min.js" type="text/javascript"></script>
     <script src="Scripts/jquery-ui.js" type="text/javascript"></script>
@@ -17,7 +18,7 @@
 <body>
     <noscript>
         <div style=" position:absolute; z-index:100000; height:2046px;top:0px;left:0px; width:100%; background:white; text-align:center;">
-            <img src="images/noscript.gif" alt='抱歉，请开启脚本支持！' />
+            <img src="themes/default/images/noscript.gif" alt='抱歉，请开启脚本支持！' />
         </div>
     </noscript>       
     <div id="loading-mask" style="position:absolute;top:0px; left:0px; width:100%; height:100%; background:#D2E0F2; z-index:20000">
@@ -39,6 +40,31 @@
         <div data-options="region:'south'" style="height:50px;"></div>
         <div data-options="region:'west',split:true" title="导航菜单" style="width:150px;">
             <div id="leftMenu">
+                <div runat=server id="AdminMenu" visible=true>
+                    <ul class="leftMenulist">
+                         <li><div ><a href="#" rel="" ><span class="icon icon-users" >&nbsp;</span><span class="nav">用户管理</span></a></div></li>
+                         <li><div ><a href="#" rel="" ><span class="icon icon-paste" >&nbsp;</span><span class="nav">公寓管理</span></a></div></li>
+                         <li><div ><a href="#" rel="" ><span class="icon icon-user2" >&nbsp;</span><span class="nav">个人资料</span></a></div></li>
+                         
+                    </ul>
+                </div>
+                <div runat=server id="MgrMenu" visible=false>
+                    <ul class="leftMenulist">
+                         <li><div ><a href="#" rel="" ><span class="icon icon-table" >&nbsp;</span><span class="nav">房间管理</span></a></div></li>
+                         <li><div ><a href="#" rel="" ><span class="icon icon-home1" >&nbsp;</span><span class="nav">房间设施</span></a></div></li>
+                         <li><div ><a href="#" rel="" ><span class="icon icon-user" >&nbsp;</span><span class="nav">租客管理</span></a></div></li>
+                         <li><div ><a href="#" rel="" ><span class="icon icon-new2" >&nbsp;</span><span class="nav">房租管理</span></a></div></li>
+                         <li><div ><a href="#" rel="" ><span class="icon icon-user2" >&nbsp;</span><span class="nav">个人资料</span></a></div></li>
+
+                    </ul>
+                </div>
+                <div runat=server id="UserMenu" visible=false>
+                    <ul class="leftMenulist">
+                         <li><div ><a href="#" rel="" ><span class="icon icon-task" >&nbsp;</span><span class="nav">房租查询</span></a></div></li>
+                         <li><div ><a href="#" rel="" ><span class="icon icon-user2" >&nbsp;</span><span class="nav">个人资料</span></a></div></li>
+                         
+                    </ul>
+                </div>
                  
             </div>
         </div>
