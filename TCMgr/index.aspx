@@ -35,6 +35,7 @@
             line-height: 20px;color: #fff; font-family: Verdana, 微软雅黑,黑体"> 
             <span id="interface_bt1"><a href='loginout.aspx'><img alt="" src="images/logout.gif" onclick="return confirm('确认：您确认要安全注销，退出登录吗？')" border="0" title="安全注销，退出登陆" align="absmiddle"  /></a></span>             
             <span id="interface_bt2"><a onclick="addTab('个人资料','/manage/User_Info.aspx','icon-user2')" href='#'><img src="images/menubox_memberico.gif" border="0"  title="个人设置" align="absmiddle"  /></a></span>
+            <span id="interface_bt3"><a onclick="addTab('我的桌面','/DeskTop.aspx','icon-home')" href='#'><img src="images/ico_home.gif" border="0"  title="我的桌面" align="absmiddle"  /></a></span>
             <span style="padding-left:10px; font-size: 15px; font-weight:bold; "><img alt="" src="images/user_logo.png" width="20" height="20" align="absmiddle" /> &nbsp;&nbsp;   <%=strUserName %> </span>
         </div>
         <div data-options="region:'south'" style="height:50px;"></div>

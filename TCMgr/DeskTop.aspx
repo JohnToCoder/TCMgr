@@ -28,23 +28,50 @@
 </head>
 <body >
     <form id="form1" runat="server">
-    <div id="cc" style="width:95%; height:98%">
-        <table >
+    <div id="cc" style="width:98%; height:100%">
+        <table style="width:100%; height:100%">
         <tr>
-            <td>
-                <div id="list" class="easyui-panel" title="房屋信息" style="width:500px;heitght:600px;padding:5px;"  data-options="iconCls:'icon-save',collapsible:true,minimizable:true,maximizable:true,closable:true">
-                    <ul>
-                        <li>easyui is a collection of user-interface plugin based on jQuery.</li>
-                        <li>easyui provides essential functionality for building modem, interactive, javascript applications.</li>
-                        <li>using easyui you don't need to write many javascript code, you usually defines user-interface by writing some HTML markup.</li>
-                        <li>complete framework for HTML5 web page.</li>
-                        <li>easyui save your time and scales while developing your products.</li>
-                        <li>easyui is very easy but powerful.</li>
-                    </ul>
+            <td style="width:60%; height:100%">
+                <div id="list" class="easyui-panel" title="房屋信息" style="padding:5px;"  data-options="fit:true,iconCls:'icon-save',collapsible:true,closable:true">
+                    <asp:GridView ID="gvList" runat="server" AllowPaging="True" 
+                        AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" 
+                        ForeColor="#333333" GridLines="None" 
+                        Width="524px" HorizontalAlign="Center" >
+                        <AlternatingRowStyle BackColor="White" />
+                        <Columns>
+                            <asp:BoundField DataField="ID" HeaderText="序号" />
+                            <asp:BoundField DataField="FlatsID" HeaderText="楼栋号" >
+                            <ItemStyle HorizontalAlign="Center" />
+                            </asp:BoundField>
+                            <asp:BoundField DataField="RoomID" HeaderText="房间号" >
+                            <ItemStyle HorizontalAlign="Center" />
+                            </asp:BoundField>
+                            <asp:BoundField DataField="RoomStatus" HeaderText="是否出租" >
+                            <ItemStyle HorizontalAlign="Center" />
+                            </asp:BoundField>
+                            <asp:BoundField DataField="FlatsAddr" HeaderText="楼栋地址" >
+                            <ItemStyle HorizontalAlign="Center" />
+                            </asp:BoundField>
+                        </Columns>
+                        <EditRowStyle BackColor="#2461BF" />
+                        <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                        <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                        <RowStyle BackColor="#EFF3FB" />
+                        <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                        <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                        <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                        <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                        <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                    </asp:GridView>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+                        ConnectionString="<%$ ConnectionStrings:TCMgrConnectionString %>" 
+                        SelectCommand="select a.ID,a.FlatsID,a.RoomID,(case when a.RoomStatus='0' then '否' else '是' end) as RoomStatus,b.FlatsAddr from dbo.tabRoom a left join dbo.tabFlatsAdmin b on a.FlatsID=b.FlatsID">
+                    </asp:SqlDataSource>
                 </div>
             </td>
-            <td >
-                <div id="note" class="easyui-panel" title="通知" style="width:300px;heitght:600px;padding:5px;"  data-options="iconCls:'icon-save',collapsible:true,minimizable:true,maximizable:true,closable:true">
+            <td style="width:40%; height:100%">
+                <div id="note" class="easyui-panel" title="通知" style="padding:5px;"  data-options="fit:true,iconCls:'icon-save',collapsible:true,closable:true">
                     <ul>
                         <li>easyui is a collection of user-interface plugin based on jQuery.</li>
                         <li>easyui provides essential functionality for building modem, interactive, javascript applications.</li>
