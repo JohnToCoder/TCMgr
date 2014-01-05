@@ -8,12 +8,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8"/><title>我的桌面</title>
     <link href="themes/icon.css" rel="stylesheet" type="text/css" />
     <link href="themes/default/easyui.css" rel="stylesheet" type="text/css" />
-    <script src="Scripts/jquery-1.10.2.min.js" type="text/javascript"></script>
-    <script src="Scripts/jquery.easyui.min.js" type="text/javascript"></script>
+    <link href="JS/themes/icon.css" rel="stylesheet" type="text/css" />
     <script src="Scripts/jquery.min.js" type="text/javascript"></script>
-    <script src="Scripts/jquery-ui.js" type="text/javascript"></script>
-    <script src="JS/common.js" type="text/javascript"></script>
-    <script type="text/javascript" src="/JS/zDialog.js"></script>   
+    <script src="Scripts/jquery.easyui.min.js" type="text/javascript"></script>     
+    <script src="JS/DeskTop.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(window).resize(function () {
             var width = $(window).width() - 10;
@@ -23,6 +21,7 @@
             $('#cc').height(height);
             $('#cc').layout();   //窗口改变大小时加载  
         });
+
     </script>
     
 </head>
@@ -31,8 +30,8 @@
     <div id="cc" style="width:98%; height:100%">
         <table style="width:100%; height:100%">
         <tr>
-            <td style="width:60%; height:100%">
-                <div id="list" class="easyui-panel" title="房屋信息" style="padding:5px;"  data-options="fit:true,iconCls:'icon-save',collapsible:true,closable:true">
+            <td style="width:60%; height:500px">
+                <div id="list" class="easyui-panel" title="房屋信息" style="padding:5px;"  data-options="fit:true,iconCls:'icon-save',collapsible:true">
                     <asp:GridView ID="gvList" runat="server" AllowPaging="True" 
                         AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" 
                         ForeColor="#333333" GridLines="None" 
@@ -70,21 +69,37 @@
                     </asp:SqlDataSource>
                 </div>
             </td>
-            <td style="width:40%; height:100%">
-                <div id="note" class="easyui-panel" title="通知" style="padding:5px;"  data-options="fit:true,iconCls:'icon-save',collapsible:true,closable:true">
-                    <ul>
-                        <li>easyui is a collection of user-interface plugin based on jQuery.</li>
-                        <li>easyui provides essential functionality for building modem, interactive, javascript applications.</li>
-                        <li>using easyui you don't need to write many javascript code, you usually defines user-interface by writing some HTML markup.</li>
-                        <li>complete framework for HTML5 web page.</li>
-                        <li>easyui save your time and scales while developing your products.</li>
-                        <li>easyui is very easy but powerful.</li>
-                    </ul>
+            <td style="width:40%; height:500px">
+                <div id="note" class="easyui-panel" title="通知" style="padding:5px;"  data-options="fit:true,iconCls:'icon-save',collapsible:true,">
+                    <table id="dg"></table>
                 </div>
             </td>
         </tr>
         
         </table>
+    </div>
+    <div id="winNote" class="easyui-window" title="通知" 
+        data-options="iconCls:'icon-save',closed:true," 
+        style="width:359px; height:321px; padding:5px;" >
+        <div class="easyui-layout" data-options="fit:true">
+            <div data-options="region:'center'" style="padding:10px;">
+                <table style="width:95%; height:80%">
+                    <tr >
+                        <td align=center><label id="labID" style=" font-size:medium"></label></td>
+                    </tr>
+                    <tr>
+                        <td><textarea id="txtNote" runat=server  
+                                style=" width: 298px; height: 113px; margin-right: 0px;" ></textarea></td>
+                    </tr>
+                    <tr>
+                        <td align=right><label id="labDate" style=" font-size:medium"></label></td>
+                    </tr>
+                </table>
+            </div>
+            <div data-options="region:'south',border:false" style="text-align:right;padding:5px 0 0;">                
+                <a class="easyui-linkbutton" data-options="iconCls:'icon-cancel'" href="javascript:void(0)" onclick="$('#winNote').window('close')">关闭</a>
+            </div>
+        </div>
     </div>
     </form>
 </body>

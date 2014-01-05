@@ -237,6 +237,7 @@
     <Content Include="images\zanwu.gif" />
     <Content Include="index.aspx" />
     <Content Include="JS\common.js" />
+    <Content Include="JS\DeskTop.js" />
     <Content Include="JS\index.js" />
     <Content Include="JS\login.js" />
     <Content Include="JS\MD5.js" />
@@ -520,13 +521,13 @@
     <Content Include="Manage\Rent_Manager.aspx" />
     <Content Include="Manage\Room_Fac.aspx" />
     <Content Include="Manage\Room_Manager.aspx" />
-    <Content Include="Manage\User_Info.aspx" />
+    <Content Include="Note.aspx" />
+    <Content Include="User_Info.aspx" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery-ui.js" />
     <Content Include="Scripts\jquery.easyui.min.js" />
     <Content Include="Scripts\jquery.min.js" />
     <Content Include="Styles\Site.css" />
-    <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
@@ -804,6 +805,9 @@
     <Compile Include="Admin\User_Manager.aspx.designer.cs">
       <DependentUpon>User_Manager.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ashx\getNote.ashx.cs">
+      <DependentUpon>getNote.ashx</DependentUpon>
+    </Compile>
     <Compile Include="ashx\LoginHandler.ashx.cs">
       <DependentUpon>LoginHandler.ashx</DependentUpon>
     </Compile>
@@ -811,13 +815,6 @@
       <DependentUpon>CheckCode.ashx</DependentUpon>
     </Compile>
     <Compile Include="Class\User.cs" />
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
     <Compile Include="DeskTop.aspx.cs">
       <DependentUpon>DeskTop.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -870,11 +867,18 @@
     <Compile Include="Manage\Room_Manager.aspx.designer.cs">
       <DependentUpon>Room_Manager.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Manage\User_Info.aspx.cs">
+    <Compile Include="Note.aspx.cs">
+      <DependentUpon>Note.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Note.aspx.designer.cs">
+      <DependentUpon>Note.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User_Info.aspx.cs">
       <DependentUpon>User_Info.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Manage\User_Info.aspx.designer.cs">
+    <Compile Include="User_Info.aspx.designer.cs">
       <DependentUpon>User_Info.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -882,6 +886,8 @@
   <ItemGroup>
     <Content Include="CheckCode.ashx" />
     <Content Include="ashx\LoginHandler.ashx" />
+    <Content Include="ashx\getNote.ashx" />
+    <None Include="JS\data.json" />
     <None Include="themes\black\images\Thumbs.db" />
     <None Include="themes\bootstrap\images\Thumbs.db" />
     <None Include="themes\default\images\Thumbs.db" />

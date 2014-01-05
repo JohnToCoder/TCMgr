@@ -46,6 +46,7 @@
                          <li><div ><a href="#" rel="" ><span class="icon icon-users" >&nbsp;</span><span class="nav">用户管理</span></a></div></li>
                          <li><div ><a href="#" rel="" ><span class="icon icon-paste" >&nbsp;</span><span class="nav">公寓管理</span></a></div></li>
                          <li><div ><a href="#" rel="" ><span class="icon icon-user2" >&nbsp;</span><span class="nav">个人资料</span></a></div></li>
+                         <li><div ><a href="#" rel="" ><span class="icon icon-tip" >&nbsp;</span><span class="nav">通   知</span></a></div></li>
                          
                     </ul>
                 </div>

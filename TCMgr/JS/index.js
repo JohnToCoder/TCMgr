@@ -3,6 +3,7 @@
     setHeight();
     $(window).resize(function () {
         windowResize();  //窗口改变大小时加载  
+        window.location.reload();
     });
 
     $('#tabs').tabs('add', {
