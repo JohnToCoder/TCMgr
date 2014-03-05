@@ -13,6 +13,34 @@
     <script src="Scripts/jquery-ui.js" type="text/javascript"></script>
     <script src="Scripts/jquery.easyui.min.js" type="text/javascript"></script>
     <script src="JS/index.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        window.onload = function () { $('#loading-mask').fadeOut(); }
+        $(window).resize(function () {
+            var width = $(window).width() - 10;
+            var height = $(window).height() - 10;
+            $('#cc').width(width);
+            $('#cc').height(height);
+            $('#cc').layout();   //窗口改变大小时加载  
+            window.location.reload();
+        });
+         
+    </script>    
+    <style type="text/css">  
+        table {  
+            border: 1px solid #ccddff;  
+            padding:0;   
+            margin:0 auto;  
+            border-collapse: collapse;            
+        }  
+        
+       td {  
+            border: 1px solid #ccddff;             
+            font-size:12px;  
+            padding: 1px 1px 1px 1px;  
+            color: #4f6b72;  
+        } 
+        
+    </style>  
 </head>
 <body>
     <form id="form1" runat="server">
@@ -21,9 +49,27 @@
             <img src="images/loading.gif" align="absmiddle" /> 网络加载中,请稍候...
             </div>
     </div>
-    <div>
-    
-    </div>
+    <div id="cc"  style=" width:100%;height:100%; ">        
+         
+            <table runat=server id="tabMain"   style=" width:900px;height:700px; ">
+            
+                <tr>
+                    <td colspan=3 align=right style=" background-image:url('images/login-wel.gif'); background-repeat:repeat; height:120px;">
+                        
+                        <img alt="二维码" src="Images/erweima.png" style= "height:120px; width:120px; margin-right:20px" />
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td style="width:900px; height:580px"> 
+                        <div id="main" runat=server style="width:890px; height:570px">
+                            <iframe id="tabIframe" name="subFrameIns" frameborder="0" src="../MenuTab.aspx" style="width: 100%; height: 100%;"></iframe>
+                        </div>
+                    </td>
+                </tr>
+                           
+         </table>
+     </div>
     </form>
 </body>
 </html>

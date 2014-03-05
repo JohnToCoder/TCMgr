@@ -27,7 +27,7 @@
 </head>
 <body >
     <form id="form1" runat="server">
-    <div id="cc" style="width:98%; height:100%">
+    <div id="cc" style="width:95%; height:95%">
         <table style="width:100%; height:100%">
         <tr>
             <td style="width:60%; height:500px">

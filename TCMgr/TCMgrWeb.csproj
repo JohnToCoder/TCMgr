@@ -13,6 +13,7 @@
     <RootNamespace>TCMgr</RootNamespace>
     <AssemblyName>TCMgr</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -521,6 +522,7 @@
     <Content Include="Manage\Rent_Manager.aspx" />
     <Content Include="Manage\Room_Fac.aspx" />
     <Content Include="Manage\Room_Manager.aspx" />
+    <Content Include="MenuTab.aspx" />
     <Content Include="Note.aspx" />
     <Content Include="User_Info.aspx" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -866,6 +868,13 @@
     </Compile>
     <Compile Include="Manage\Room_Manager.aspx.designer.cs">
       <DependentUpon>Room_Manager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MenuTab.aspx.cs">
+      <DependentUpon>MenuTab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuTab.aspx.designer.cs">
+      <DependentUpon>MenuTab.aspx</DependentUpon>
     </Compile>
     <Compile Include="Note.aspx.cs">
       <DependentUpon>Note.aspx</DependentUpon>
