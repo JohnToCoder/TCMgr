@@ -28,9 +28,9 @@
 <body >
     <form id="form1" runat="server">
     <div id="cc" style="width:95%; height:95%">
-        <table style="width:100%; height:100%">
+        <table >
         <tr>
-            <td style="width:60%; height:500px">
+            <td style="width:60%; height:460px">
                 <div id="list" class="easyui-panel" title="房屋信息" style="padding:5px;"  data-options="fit:true,iconCls:'icon-save',collapsible:true">
                     <asp:GridView ID="gvList" runat="server" AllowPaging="True" 
                         AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" 
@@ -69,7 +69,7 @@
                     </asp:SqlDataSource>
                 </div>
             </td>
-            <td style="width:40%; height:500px">
+            <td style="width:40%; height:460px">
                 <div id="note" class="easyui-panel" title="通知" style="padding:5px;"  data-options="fit:true,iconCls:'icon-save',collapsible:true,">
                     <table id="dg"></table>
                 </div>

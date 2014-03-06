@@ -458,6 +458,7 @@
     <Content Include="JS\themes\icons\import.gif" />
     <Content Include="JS\themes\icons\insert.gif" />
     <Content Include="JS\themes\icons\jingpin.gif" />
+    <Content Include="JS\themes\icons\right.gif" />
     <Content Include="JS\themes\icons\link.gif" />
     <Content Include="JS\themes\icons\log.gif" />
     <Content Include="JS\themes\icons\mail.gif" />

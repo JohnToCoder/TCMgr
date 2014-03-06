@@ -11,7 +11,29 @@ namespace TCMgr
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            string strUserType = Session["UserType"].ToString();
+            if (!Page.IsPostBack)
+            {
+                //  strUserType = Session["UserType"].ToString();
+                if (strUserType == "0")
+                {
+                    AdminMenu.Visible = true;
+                    MgrMenu.Visible = false;
+                    UserMenu.Visible = false;
+                }
+                else if (strUserType == "1")
+                {
+                    AdminMenu.Visible = false;
+                    MgrMenu.Visible = true;
+                    UserMenu.Visible = false;
+                }
+                else if (strUserType == "2") 
+                {
+                    AdminMenu.Visible = false;
+                    MgrMenu.Visible = false;
+                    UserMenu.Visible = true;
+                }
+            }  
         }
     }
 }
