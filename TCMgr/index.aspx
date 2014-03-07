@@ -51,7 +51,7 @@
     </div>
     <div id="cc"  style=" width:100%;height:100%; ">        
          
-            <table runat=server id="tabMain"   style=" width:900px;height:620px; ">
+            <table runat=server id="tabMain"   style=" width:900px;height:754px; ">
             
                 <tr>
                     <td colspan=3 align=right style=" background-image:url('images/login-wel.gif'); background-repeat:repeat; height:120px;">
@@ -61,15 +61,15 @@
                 </tr>
                 
                 <tr>
-                    <td style="width:900px; height:560px"> 
-                        <div id="main" runat=server style="width:890px; height:550px">
+                    <td style="width:900px; height:570px"> 
+                        <div id="main" runat=server style="width:890px; height:568px">
                             <iframe id="tabIframe" name="subFrameIns" frameborder="0" src="../MenuTab.aspx" style="width: 100%; height: 100%;"></iframe>
                         </div>
                     </td>
                 </tr>
                  <tr>
-                    <td colspan=3 align=right style=" background-repeat:repeat; height:60px;">
-                        
+                    <td colspan=3  style=" background-repeat:repeat; height:60px;">
+                        <span>ceshi </span>
                     </td>
                  </tr>          
          </table>

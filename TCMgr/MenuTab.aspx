@@ -17,7 +17,7 @@
     <style type="text/css">  
         table {  
             border: 1px solid #CCEEFF;  
-            padding:0;   
+            padding:1px 1px 1px 1px;   
             margin:0 auto;  
             border-collapse: collapse;            
         }  
@@ -36,24 +36,26 @@
      <div id="cc">       
         <table style="width:900px;height:560px">
             <tr>
-                <td style="width:180px;vertical-align:top">                      
-                    <div id="divWelcom" style="width:180px;height:160px">
+                <td style="width:160px;vertical-align:top">                      
+                    <div id="divWelcom" style="width:160px;height:160px">
                         <table id="tabWel" style="width:100%; height:100%; border:1px; border-color:#15428B;">
                             <tr>
-                                <td ><span>&nbsp;&nbsp;</span></td>                        
+                                <td ><span style=" font-style:oblique; color:Red;">&nbsp;&nbsp;欢迎您：</span></td>                        
                             </tr>
                             <tr>
-                                <td ><span class="icon icon-users" >&nbsp;</span><span class="nav">用户管理</span></td>                        
+                                <td ><span>&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="labusn" runat="server" Text=""></asp:Label></span></td>                        
                             </tr>
                             <tr>
-                                <td ><span class="icon icon-users" >&nbsp;</span><span class="nav">用户管理</span></td>                        
+                                <td ><span >&nbsp;&nbsp;&nbsp;&nbsp;</span></td>                        
                             </tr>
                             <tr>
-                                <td ><span class="icon icon-users" >&nbsp;</span><span class="nav">用户管理</span></td>                        
+                                <td style="vertical-align:middle;">
+                                    <a href='loginout.aspx' ><span class="icon icon-tip" >&nbsp;</span><span class="nav">注销登录</span><span class="icon icon-right" >&nbsp;</span></a>
+                                </td>                        
                             </tr>
                         </table>
                     </div>
-                    <div data-options="split:true" title="导航菜单" style="width:180px;">            
+                    <div data-options="split:true" title="导航菜单" style="width:160px;">            
                         <div id="leftMenu">
                             <div runat=server id="AdminMenu" visible=true>
                                 <ul class="leftMenulist">
@@ -85,12 +87,12 @@
                     </div>
                 </td>  
                 
-                <td style="height:560px">
-                    <div id="mainPanle" region="center" style="background: #eee; overflow-y:hidden">
-                        <div id="tabs" class="easyui-tabs"  fit="true" border="false" >
-                         <!--<div title='隐藏层(勿删)'></div>-->
-		                </div>
-                     </div> 
+                <td style="height:555px;vertical-align:top">
+                    
+                    <div id="tabs" class="easyui-tabs"  fit="true" border="false" style="height:552px">
+                        <!--<div title='隐藏层(勿删)'></div>-->
+		            </div>
+                      
                 </td>
             </tr>
            
