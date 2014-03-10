@@ -36,34 +36,23 @@
      <div id="cc">       
         <table style="width:900px;height:560px">
             <tr>
-                <td style="width:160px;vertical-align:top">                      
-                    <div id="divWelcom" style="width:160px;height:160px">
-                        <table id="tabWel" style="width:100%; height:100%; border:1px; border-color:#15428B;">
-                            <tr>
-                                <td ><span style=" font-style:oblique; color:Red;">&nbsp;&nbsp;欢迎您：</span></td>                        
-                            </tr>
-                            <tr>
-                                <td ><span>&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="labusn" runat="server" Text=""></asp:Label></span></td>                        
-                            </tr>
-                            <tr>
-                                <td ><span >&nbsp;&nbsp;&nbsp;&nbsp;</span></td>                        
-                            </tr>
-                            <tr>
-                                <td style="vertical-align:middle;">
-                                    <a href='loginout.aspx' ><span class="icon icon-tip" >&nbsp;</span><span class="nav">注销登录</span><span class="icon icon-right" >&nbsp;</span></a>
-                                </td>                        
-                            </tr>
-                        </table>
-                    </div>
+                <td style="width:160px;">                      
+                    <table>
+                    <tr>
+                    <td align=center>
+                        <asp:Label runat=server Text="导航菜单" ></asp:Label>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td style="height:360px; vertical-align:top" align=left>
                     <div data-options="split:true" title="导航菜单" style="width:160px;">            
                         <div id="leftMenu">
                             <div runat=server id="AdminMenu" visible=true>
                                 <ul class="leftMenulist">
-                                     <li><div ><a href="#" rel="" ><span class="icon icon-users" >&nbsp;</span><span class="nav">用户管理&nbsp;</span><span class="icon icon-right" >&nbsp;</span></a></div></li>
+                                     <li><div ><a href="#" rel="../Admin/User_Manager.aspx" ><span class="icon icon-users" >&nbsp;</span><span class="nav">用户管理&nbsp;</span><span class="icon icon-right" >&nbsp;</span></a></div></li>
                                      <li><div ><a href="#" rel="" ><span class="icon icon-paste" >&nbsp;</span><span class="nav">公寓管理</span><span class="icon icon-right" >&nbsp;</span></a></div></li>
-                                     <li><div ><a href="#" rel="" ><span class="icon icon-user2" >&nbsp;</span><span class="nav">个人资料</span><span class="icon icon-right" >&nbsp;</span></a></div></li>
-                                     <li><div ><a href="#" rel="" ><span class="icon icon-tip" >&nbsp;</span><span class="nav">通   知</span><span class="icon icon-right" >&nbsp;</span></a></div></li>
-                         
+                                     <li><div ><a href="#" rel="" ><span class="icon icon-tip" >&nbsp;</span><span class="nav">通知管理</span><span class="icon icon-right" >&nbsp;</span></a></div></li>
+                                     <li><div ><a href="#" rel="../User_Info.aspx" ><span class="icon icon-user2" >&nbsp;</span><span class="nav">个人资料</span><span class="icon icon-right" >&nbsp;</span></a></div></li>
                                 </ul>
                             </div>
                             <div runat=server id="MgrMenu" visible=false>
@@ -72,24 +61,34 @@
                                      <li><div ><a href="#" rel="" ><span class="icon icon-home1" >&nbsp;</span><span class="nav">房间设施</span><span class="icon icon-right" >&nbsp;</span></a></div></li>
                                      <li><div ><a href="#" rel="" ><span class="icon icon-user" >&nbsp;</span><span class="nav">租客管理</span><span class="icon icon-right" >&nbsp;</span></a></div></li>
                                      <li><div ><a href="#" rel="" ><span class="icon icon-new2" >&nbsp;</span><span class="nav">房租管理</span><span class="icon icon-right" >&nbsp;</span></a></div></li>
-                                     <li><div ><a href="#" rel="" ><span class="icon icon-user2" >&nbsp;</span><span class="nav">个人资料</span><span class="icon icon-right" >&nbsp;</span></a></div></li>
+                                     <li><div ><a href="#" rel="../User_Info.aspx" ><span class="icon icon-user2" >&nbsp;</span><span class="nav">个人资料</span><span class="icon icon-right" >&nbsp;</span></a></div></li>
 
                                 </ul>
                             </div>
                             <div runat=server id="UserMenu" visible=false>
                                 <ul class="leftMenulist">
                                      <li><div ><a href="#" rel="" ><span class="icon icon-task" >&nbsp;</span><span class="nav">房租查询</span><span class="icon icon-right" >&nbsp;</span></a></div></li>
-                                     <li><div ><a href="#" rel="" ><span class="icon icon-user2" >&nbsp;</span><span class="nav">个人资料</span><span class="icon icon-right" >&nbsp;</span></a></div></li>
+                                     <li><div ><a href="#" rel="../User_Info.aspx" ><span class="icon icon-user2" >&nbsp;</span><span class="nav">个人资料</span><span class="icon icon-right" >&nbsp;</span></a></div></li>
                          
                                 </ul>
                             </div>
                             </div>
                     </div>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td style="height:160px; vertical-align:middle" align=center>
+                    <div id="divWelcom" style="width:160px;height:160px">
+                        <img alt="二维码" src="Images/erweima.png" style= "height:120px; width:120px; margin-right:20px" />
+                    </div>
+                    </td>
+                    </tr>
+                    </table>
                 </td>  
                 
-                <td style="height:555px;vertical-align:top">
+                <td style="height:560px;vertical-align:top">
                     
-                    <div id="tabs" class="easyui-tabs"  fit="true" border="false" style="height:552px">
+                    <div id="tabs" class="easyui-tabs"  fit="true" border="false" style="height:560px">
                         <!--<div title='隐藏层(勿删)'></div>-->
 		            </div>
                       

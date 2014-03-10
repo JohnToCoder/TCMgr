@@ -49,14 +49,33 @@
             <img src="images/loading.gif" align="absmiddle" /> 网络加载中,请稍候...
             </div>
     </div>
-    <div id="cc"  style=" width:100%;height:100%; ">        
+    <div id="cc">        
          
             <table runat=server id="tabMain"   style=" width:900px;height:754px; ">
             
                 <tr>
                     <td colspan=3 align=right style=" background-image:url('images/login-wel.gif'); background-repeat:repeat; height:120px;">
+                         <div id="divWelcom" style="width:160px;height:120px">
+                            <table id="tabWel" style="width:100%; height:100%; border:1px; border-color:#15428B;">
+                             <tr>
+                                    <td align=center><span >&nbsp;&nbsp;&nbsp;&nbsp;</span></td>                        
+                                </tr>
+                                <tr>
+                                    <td align=left><span style=" font-style:oblique; color:Red; font-size:large">欢迎您：</span></td>                        
+                                </tr>
+                                <tr>
+                                    <td align=center><span><asp:Label ID="labusn" runat="server" Font-Size=Larger Text=""></asp:Label></span></td>                        
+                                </tr>
+                               
+                                <tr>
+                                    <td style="vertical-align:middle;" align=center>
+                                        <a href='loginout.aspx' ><span class="nav">注销登录</span><span class="icon icon-undo" >&nbsp;</span></a>
+                                    </td>                        
+                                </tr>
+                            </table>
+                        </div>
                         
-                        <img alt="二维码" src="Images/erweima.png" style= "height:120px; width:120px; margin-right:20px" />
+                        
                     </td>
                 </tr>
                 
@@ -68,8 +87,8 @@
                     </td>
                 </tr>
                  <tr>
-                    <td colspan=3  style=" background-repeat:repeat; height:60px;">
-                        <span>ceshi </span>
+                    <td colspan=3  style=" background-repeat:repeat;" align=center>
+                       <a><span>版权所有 |</span></a> <a><span>联系我们 |</span></a><a><span>小樱</span></a>
                     </td>
                  </tr>          
          </table>

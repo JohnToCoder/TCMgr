@@ -1,10 +1,10 @@
 ﻿$(function () {
     $('#cc').layout();
-    setHeight();
-    $(window).resize(function () {
-        windowResize();  //窗口改变大小时加载  
-        window.location.reload();
-    });
+    //    setHeight();
+    //    $(window).resize(function () {
+    //        windowResize();  //窗口改变大小时加载  
+    //        window.location.reload();
+    //    });
 
     $('#tabs').tabs('add', {
         title: '我的工作台',
@@ -13,7 +13,7 @@
     });
     tabClose();
     tabCloseEven();
-
+    //左侧菜单项的添加和样式
     $('.leftMenulist li a').click(function () {
         var tabTitle = $(this).children('.nav').text();
 
@@ -44,14 +44,7 @@ function windowResize() {
 window.onload = function () {
     $('#loading-mask').fadeOut();
 }
-function setHeight() {
-    var cheight = document.documentElement.clientHeight;
-    var cwidth = document.documentElement.clientWidth;
-    var c = $('#cc');
-    c.height(cheight-10);
-    c.width(cwidth-10);
-    c.layout('resize');
-}
+//新增加一个Tab页面
 function addTab(subtitle,url,icon){
 	if(!$('#tabs').tabs('exists',subtitle)){
 		$('#tabs').tabs('add',{
@@ -66,9 +59,9 @@ function addTab(subtitle,url,icon){
 	}
 	tabClose();
 }
+//使用子页面的形式添加链接到
+function createFrame(url) {
 
-function createFrame(url)
-{
 	var s = '<iframe scrolling="auto" frameborder="0"  src="'+url+'" style="width:100%;height:100%;"></iframe>';
 	return s;
 }

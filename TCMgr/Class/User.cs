@@ -8,6 +8,7 @@ namespace TCMgr.Class
     //创建用户类  保存用户信息  保存Session值
     public class User
     {
+        private string ID;
         private string UserID;
         private string UserIDNum;
         private string UserName;
@@ -17,6 +18,7 @@ namespace TCMgr.Class
         private string Email;
         private string Tel;
 
+        public string aID { get { return ID; } set { ID = value; } }
         public string uID { get { return UserID; } set { UserID = value; } }
         public string uIDNum { get { return UserIDNum; } set { UserIDNum = value; } }
         public string uName { get { return UserName; } set { UserName = value; } }

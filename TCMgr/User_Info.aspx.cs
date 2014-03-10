@@ -11,7 +11,14 @@ namespace TCMgr.Manage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!Page.IsPostBack)
+            {
+                txtuid.Value = Session["UserID"].ToString();
+                txtuname.Value = Session["UserName"].ToString();               
+                txtUserType.Value = Session["TypeName"].ToString();
+                txtTell.Value = Session["Tel"].ToString();
+                txtEmail.Value = Session["Email"].ToString();
+            }
         }
     }
 }

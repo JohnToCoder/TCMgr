@@ -51,6 +51,7 @@ namespace TCMgr
                     SqlDataReader dr = command.ExecuteReader();
                     while (dr.Read())
                     {
+                        userInfo.aID = dr["ID"].ToString();
                         userInfo.uID = dr["UserID"].ToString();
                         userInfo.uIDNum = dr["UserIDNum"].ToString();
                         userInfo.uName = dr["UserName"].ToString();
@@ -75,6 +76,7 @@ namespace TCMgr
                 if (userInfo.uName == txtUserName && userInfo.uPW == txtPassWord)
                 {
                     /*保存用户Session信息*/
+                    Session.Add("ID", userInfo.aID);
                     Session.Add("UserID", userInfo.uID);
                     Session.Add("UserIDNum", userInfo.uIDNum);
                     Session.Add("UserName", userInfo.uName);

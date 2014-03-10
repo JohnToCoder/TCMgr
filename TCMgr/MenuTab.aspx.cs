@@ -33,7 +33,7 @@ namespace TCMgr
                     MgrMenu.Visible = false;
                     UserMenu.Visible = true;
                 }
-                labusn.Text = Session["UserName"].ToString();
+                
             }  
         }
     }
